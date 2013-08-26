@@ -1,5 +1,7 @@
 package fr.meijin.cataclysm.webapp.main;
 
+import java.util.Calendar;
+
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.handler.ContextHandlerCollection;
 
@@ -25,7 +27,10 @@ public class Launcher extends Thread {
 		jettyServer.setHandler(contexts);
 		try {
 			System.out.println("Starting jetty");
+			long t1 = Calendar.getInstance().getTimeInMillis();
 			jettyServer.start();
+			long t2 = Calendar.getInstance().getTimeInMillis();
+			System.out.println("Server started in : "+(t2-t1)+" ms");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.exit(0);

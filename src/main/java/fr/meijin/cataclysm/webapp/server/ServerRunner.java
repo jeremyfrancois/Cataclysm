@@ -41,6 +41,8 @@ public class ServerRunner extends JFrame implements ActionListener {
 		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
 		Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/credit.png"));
+		this.setTitle("Cataclysm");
+		
 		setIconImage(icon);
 		
 		int width = 710;
@@ -87,8 +89,9 @@ public class ServerRunner extends JFrame implements ActionListener {
 
 		setVisible(true);
 
+		
 		while (!jettyServer.isStarted()) {
-			Thread.sleep(60);
+			Thread.sleep(5);
 			if(progressBar.getValue()==100)
 				progressBar.setValue(0);
 			progressBar.setValue(progressBar.getValue()+1);

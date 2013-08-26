@@ -1,0 +1,25 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="http://www.zkoss.org/2005/zul"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd ">
+	<div align="right" style="padding-top : 5px; padding-bottom : 5px;">
+		<button id="printRound" label="Imprimer" mold="trendy"/>
+		<button id="deleteRound" label="Supprimer la ronde" mold="trendy"/>
+	</div>
+	<listbox id="listboxRound" apply="fr.meijin.cataclysm.composer.RoundComposer" class="printable"
+		itemRenderer="fr.meijin.cataclysm.renderer.RoundItemRenderer"  height="99%">
+		<listhead>
+			<listheader label="N°" hflex="1" align="center" sort="auto"/>
+			<listheader label="Joueur 1" hflex="2"/>
+			<listheader label="Mission Joueur 1" hflex="2"/>
+			<listheader label="PV Joueur 1" hflex="2"/>
+			<listheader label="Pts Tournoi Joueur 1" hflex="2"/>
+			<listheader label="Joueur 2" hflex="2"/>
+			<listheader label="Mission Joueur 2" hflex="2"/>
+			<listheader label="PV Joueur 2" hflex="2"/>
+			<listheader label="Pts Tournoi Joueur 2" hflex="2"/>
+			<listheader label="Action" hflex="1" align="center"/>
+		</listhead>
+	</listbox>
+</zk>

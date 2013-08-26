@@ -1,0 +1,19 @@
+<?page title="Ranking" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<grid apply="fr.meijin.cataclysm.composer.RankingComposer" model="@{pageScope.playerRankings}">
+		<columns sizable="true">
+			<column label="Rang" align="center" hflex="1" />
+			<column label="Pseudo" hflex="2" />
+			<column label="Pts Tournoi" hflex="2" />
+			<column label="Goal Average" hflex="2" />
+		</columns>
+		<rows>
+			<row self="@{each='player'}" visible="${player.id != 0}">
+				<label value="@{self.parent.index, converter='fr.meijin.cataclysm.converter.RankingConverter'}" />
+				<label value="@{player.nickname}" />
+				<label value="@{player.points}" />
+				<label value="@{player.goalAverage}" />
+			</row>
+		</rows>
+	</grid>
+</zk>

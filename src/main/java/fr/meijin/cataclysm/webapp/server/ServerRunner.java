@@ -91,7 +91,7 @@ public class ServerRunner extends JFrame implements ActionListener {
 
 		
 		while (!jettyServer.isStarted()) {
-			Thread.sleep(5);
+			Thread.sleep(30);
 			if(progressBar.getValue()==100)
 				progressBar.setValue(0);
 			progressBar.setValue(progressBar.getValue()+1);

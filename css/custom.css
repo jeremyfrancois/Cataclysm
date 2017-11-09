@@ -1,10 +1,59 @@
+@font-face {
+	font-family: "Midnite";
+	src: url("../fonts/MidniteHour.woff") format("woff");
+}
+
+body {
+	color: #dfdfdf;
+	background-color: #3e3e3e;
+}
+
+a, .navbar > a {
+	color: #70c77f;
+}
+
+a:hover, .navbar > a:hover {
+	color: #58f38c;
+}
+
+.form-control {
+	color: #fff;
+	background-color: #000;
+}
+
+.form-control:focus {
+	background-color : #334c38;
+	color: #fff;
+}
+
+.table thead th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #5a5a5a;
+}
+.table-bordered td, 
+.table-bordered th {
+	border: 1px solid #5a5a5a;
+}
+
+.modal-content {
+	background-color : #424242;
+}
+
 .navbar {
-	background-color : #f8f9fa;
-	color: #111;
+	background-color: #1d1d1d;
 }
 
 .navbar-brand  {
   -webkit-app-region: drag;
+  font-family : "Midnite";
+  font-size : 62px;
+  position : absolute;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	color: #74ff8c;
+	background-color: #3e3e3e;
+	border-color: #616161;
 }
 
 .pointer {
@@ -32,3 +81,4 @@
 .remove-round > svg {
 	margin-bottom: -6px;
 }
+

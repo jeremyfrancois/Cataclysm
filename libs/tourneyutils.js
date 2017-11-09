@@ -93,9 +93,9 @@ class Player  {
 	
 	compareTo(p2){
 		let comp = 0;
-		comp += (this.totalPoints() - p2.totalPoints())*1000;
+		comp -= (this.totalPoints() - p2.totalPoints())*1000;
 		if(comp === 0)
-		comp += this.totalGoal() - p2.totalGoal();
+		comp -= this.totalGoal() - p2.totalGoal();
 		return comp;
 	}
 	

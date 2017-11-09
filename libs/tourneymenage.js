@@ -1,5 +1,3 @@
-let win = require('electron').remote.getCurrentWindow();
-
 $(function(){
     feather.replace();
 	var tournoi = new Tourney();
@@ -14,22 +12,6 @@ $(function(){
 	$('#modal-submit-player').on('click', addPlayer);
 	$('#form-player').on('submit', addPlayer);
 	$('#nav-tabs-tourney').on('click', '.remove-round', removeRound);
-	
-	$('#close').on('click', () => {
-		win.close();
-	});
-	
-	$('#minimize').on('click', () => {
-		win.minimize();
-	});
-	
-	$('#maximize').on('click', () => {
-		if(win.isMaximized()){
-			win.unmaximize();
-		} else {
-			win.maximize();
-		}
-	});
 	
 	$('#button-import').on('click', ()=>{
 		$('#import-file').trigger('click');
@@ -56,7 +38,6 @@ $(function(){
 			}
 		}
 		
-		console.log('new player : '+$('#player-nickname').val())
 		var player = new Player($('#player-nickname').val());
 		tournoi.players.push(player);
 		reloadPlayersTable();
@@ -118,7 +99,6 @@ $(function(){
 			round.matches.forEach(function(match){
 				if(match.player1.nickname === player.nickname
 					|| match.player2.nickname === player.nickname){
-					console.log('Pushing game for player '+player.nickname)
 					player.games.push(match);
 				}
 			});

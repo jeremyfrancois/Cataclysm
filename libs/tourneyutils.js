@@ -96,7 +96,6 @@ class Player  {
 		comp += (this.totalPoints() - p2.totalPoints())*1000;
 		if(comp === 0)
 		comp += this.totalGoal() - p2.totalGoal();
-		console.log('compare result : '+comp);
 		return comp;
 	}
 	
@@ -178,13 +177,10 @@ class Tourney {
 		this.sortPlayers(playersToMatch);
 		
 		while(matchesArray.length < maxTable){
-			let playerToMatch = playersToMatch.shift();
-			console.log('Matching player '+playerToMatch.nickname);
-			
+			let playerToMatch = playersToMatch.shift();			
 			let indexPlayerMatched = -1;
 			let match = null;
 			playersToMatch.forEach(function(player){
-				console.log('Trying to match against player '+player.nickname);
 				if(player.games){
 					player.games.forEach(function(game){
 						if((game.player1.nickname !== playerToMatch.nickname
@@ -214,7 +210,6 @@ class Tourney {
 	createMatch(player, playerToMatch, maxTable, matchedTables, roundNumber){
 		let table = this.findTable(player, playerToMatch, maxTable, matchedTables);
 		matchedTables.push(table);
-		console.log('Creating new match '+player.nickname+' vs '+ playerToMatch.nickname+' on table '+table);
 		return new Match(playerToMatch, player, table, roundNumber);
 	}
 	
@@ -233,7 +228,6 @@ class Tourney {
 			if(player1.games){
 				player1.games.forEach(function(match){
 					if(match.table === t){
-						console.log(player1.nickname+' already played on table '+t);
 						played = false;
 					}
 				});
@@ -242,16 +236,12 @@ class Tourney {
 			if(player2.games){
 				player2.games.forEach(function(match){
 					if(match.table === t){
-						console.log(player2.nickname+' already played on table '+t);
 						played = false;
 					}
 				});
 			}
-			console.log('filtering table '+t+' : '+!played);
 			return played;
 		});
-
-		console.log(availableTables.length+' tables available '+availableTables+'. Match set on table '+(availableTables.length > 0 ? availableTables[0] : firstAvailableTable));
 		return availableTables.length > 0 ? availableTables[0] : firstAvailableTable;
 	}
 	

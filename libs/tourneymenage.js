@@ -119,7 +119,7 @@ $(function(){
 	}
 	
 	function removeRound(e){
-		let roundNumber = $(e.target).data('round');
+		let roundNumber = $(e.currentTarget).data('round');
 		let indexRound = -1;
 		tournoi.rounds.forEach(function(round){
 			if(round.roundNumber === roundNumber){
@@ -150,9 +150,8 @@ $(function(){
 				$('#nav-tabs-tourney').append(`	<li class="nav-item nav-round">
 													<a class="nav-link" href="#tab-pane-round${round.roundNumber}" data-toggle="tab" role="tab" aria-controls="tab-pane-round${round.roundNumber}" aria-selected="true">
 														Round ${round.roundNumber}
-														
+														<span class="remove-round pull-right" data-round="${round.roundNumber}"><i data-feather="x"></i></span>
 													</a>
-													<span class="remove-round pull-right" data-round="${round.roundNumber}"><i data-feather="x"></i></span>
 												</li>`);
 				
 				$('.tab-pane .show .active').removeClass('active show');

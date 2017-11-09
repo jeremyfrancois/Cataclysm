@@ -1,0 +1,116 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "feather-icons",
+        "scope": null,
+        "escapedName": "feather-icons",
+        "name": "feather-icons",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Users\\jfrancois\\workspace_perso\\TourneyMenage"
+    ]
+  ],
+  "_from": "feather-icons@latest",
+  "_id": "feather-icons@3.3.0",
+  "_inCache": true,
+  "_location": "/feather-icons",
+  "_nodeVersion": "6.11.4",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/feather-icons-3.3.0.tgz_1507755989379_0.5768743939697742"
+  },
+  "_npmUser": {
+    "name": "colebemis",
+    "email": "cole@colebemis.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "feather-icons",
+    "scope": null,
+    "escapedName": "feather-icons",
+    "name": "feather-icons",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/feather-icons/-/feather-icons-3.3.0.tgz",
+  "_shasum": "510d1b37cd99463f2439fc7c673577b8398ac2f2",
+  "_shrinkwrap": null,
+  "_spec": "feather-icons",
+  "_where": "C:\\Users\\jfrancois\\workspace_perso\\TourneyMenage",
+  "author": {
+    "name": "Cole Bemis",
+    "email": "cole@colebemis.com",
+    "url": "http://colebemis.com"
+  },
+  "bugs": {
+    "url": "https://github.com/colebemis/feather/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {},
+  "description": "Simply beautiful open source icons",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "commitizen": "^2.9.6",
+    "core-js": "^2.4.1",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.5.0",
+    "husky": "^0.13.4",
+    "parse5": "^3.0.2",
+    "rsvp": "^3.6.0",
+    "semantic-release": "^6.3.6",
+    "svgo": "^0.7.2",
+    "validate-commit-msg": "^2.12.1",
+    "webpack": "^3.0.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "510d1b37cd99463f2439fc7c673577b8398ac2f2",
+    "tarball": "https://registry.npmjs.org/feather-icons/-/feather-icons-3.3.0.tgz"
+  },
+  "files": [
+    "dist"
+  ],
+  "gitHead": "e80f80524adb7804e8bad1b8d34893b843ef4a11",
+  "homepage": "https://github.com/colebemis/feather#readme",
+  "license": "MIT",
+  "main": "dist/feather.js",
+  "maintainers": [
+    {
+      "name": "colebemis",
+      "email": "cole@colebemis.com"
+    }
+  ],
+  "name": "feather-icons",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colebemis/feather.git"
+  },
+  "scripts": {
+    "all": "make",
+    "build": "make build",
+    "cm": "git-cz",
+    "commitmsg": "validate-commit-msg",
+    "lint": "make lint",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "version": "3.3.0"
+}

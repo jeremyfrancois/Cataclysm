@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CATACLYSM</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/custom.css" />
+	</head>
+	<body>
+
+		<!-- HEADER -->
+		<nav class="navbar navbar-expand-lg">
+			<label class="navbar-brand">CATACLYSM</label>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+	
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+				    <li class="nav-item">
+        				<a id="button-import" class="nav-link" href="#"><i data-feather="download"></i>&nbsp;<span class="menubutton-label">Import T3</span></a>
+        				<input type="file" id="import-file" accept=".csv" style="display:none;"/>
+      				</li>
+      				<li class="nav-item">
+        				<a class="nav-link" href="#" data-toggle="modal" data-target="#modal-add-player"><i data-feather="user-plus"></i>&nbsp;<span class="menubutton-label">Add Player</span></a>
+      				</li>
+       				<li class="nav-item">
+        				<a id="button-add-round" class="nav-link" href="#"><i data-feather="plus-circle"></i>&nbsp;<span class="menubutton-label">Add Round</span></a>
+      				</li>
+				</ul>
+			</div>
+			
+			<div class="pull-right">
+				<button id="close" type="button" class="pointer close h4" aria-label="Close">
+  					<i data-feather="x"></i>
+				</button>
+				&nbsp;
+				<button id="maximize" type="button" class="pointer close h4" aria-label="Maximize">
+					<i data-feather="square"></i>
+				</button>
+				&nbsp;
+				<button id="minimize" type="button" class="pointer close h4" aria-label="Minimize">
+					<i data-feather="minus"></i>
+				</button>
+			</div>
+		</nav>
+		
+		<!-- CONTENT -->
+		<div>
+			<ul id="nav-tabs-tourney" class="nav nav-tabs nav-fill" role="tablist">
+				<li class="nav-item">
+			    	<a class="nav-link active" href="#tab-pane-rankings" data-toggle="tab" role="tab" aria-controls="tab-pane-rankings" aria-selected="true"><i class="fa fa-users"></i>&nbsp;Rankings</a>
+			  	</li>
+			</ul>
+			
+			<div class="tab-content" id="tabcontent-tourney">
+				<div class="tab-pane fade show active" id="tab-pane-rankings" role="tabpanel" aria-labelledby="tab-pane-rankings">
+			  		<table id="table-rankings" class="table table-striped table-bordered">
+			  			<thead>
+			  				<tr>
+			  					<th>#</th>
+			  					<th>Nickname</th>
+			  					<th>Points</th>
+			  					<th>G.A.</th>
+			  					<th></th>
+			  				</tr>
+			  			</thead>
+			  		</table>
+			  	</div>
+			</div>
+		</div>
+		
+		<!-- MODALS -->
+		<div id="modal-add-player" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Add Player</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          				<span aria-hidden="true">&times;</span>
+	        			</button>
+	      			</div>
+	      			<div class="modal-body">
+	        			<form id="form-player">
+							<div class="form-group">
+								<label for="player-nickname">Nickname</label>
+							    <input type="text" class="form-control" id="player-nickname" aria-describedby="player-nickname" placeholder="Enter Nickname" required>
+							    <label id="error-nickname" class="text-danger" style="display : none;">This nickname already exists !</label>
+							</div>
+<!-- 							<div class="form-group"> -->
+<!-- 								<label for="army">Army</label> -->
+<!-- 								<select id="player-army" name="army" class="form-control"> -->
+<!-- 									<option>Adeptus Astra Telepathica</option> -->
+<!-- 									<option>Adeptus Mechanicus</option> -->
+<!-- 									<option>Adeptus Munistorum</option> -->
+<!-- 									<option>Astra Militarum</option> -->
+<!-- 									<option>Blood Angels</option> -->
+<!-- 									<option>Chaos Demon</option> -->
+<!-- 									<option>Chaos Space Marines</option>  -->
+<!-- 									<option>Craftworlds</option> -->
+<!-- 									<option>Dark Angels</option> -->
+<!-- 									<option>Deathwatch</option> -->
+<!-- 									<option>Death Guard</option> -->
+<!-- 									<option>Drukhari</option> -->
+<!-- 									<option>Genestealer Cults</option>   -->
+<!-- 									<option>Grey Knights</option> -->
+<!-- 									<option>Harlequins</option> -->
+<!-- 									<option>Inquisition</option> -->
+<!-- 									<option>Necrons</option> -->
+<!-- 									<option>Officio Assassinorum</option>   -->
+<!-- 									<option>Orks</option> -->
+<!-- 									<option>Questor Imperialis</option>   -->
+<!-- 									<option>Questor Traitoris</option> -->
+<!-- 									<option>Space Marines</option> -->
+<!-- 									<option>Space  Wolves</option> -->
+<!-- 									<option>Sisters of Silence</option> -->
+<!-- 									<option>T'au Empire</option> -->
+<!-- 									<option>Tyranids</option> -->
+<!-- 									<option>Ynnari</option> -->
+<!-- 								</select> -->
+<!-- 							</div> -->
+	  					</form>
+	      			</div>
+	      			<div class="modal-footer">
+	        			<button id="modal-submit-player" type="button" class="btn btn-primary">Save</button>
+	        			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	      			</div>
+	    		</div>
+	  		</div>
+		</div>
+		<script src="node_modules/jquery/dist/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/feather.min.js"></script>
+		<script src="js/jquery.csv.min.js"></script>
+		<script src="libs/tourneyutils.js"></script>
+		<script src="libs/tourneymenage.js"></script>
+	</body>
+</html>

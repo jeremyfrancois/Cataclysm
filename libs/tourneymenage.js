@@ -150,7 +150,7 @@ $(function(){
 				$('#nav-tabs-tourney').append(`	<li class="nav-item nav-round">
 													<a class="nav-link" href="#tab-pane-round${round.roundNumber}" data-toggle="tab" role="tab" aria-controls="tab-pane-round${round.roundNumber}" aria-selected="true">
 														Round ${round.roundNumber}
-														<div class="remove-round pull-right"><i data-round="${round.roundNumber}" class="fa fa-remove"></i></div>
+														<div class="remove-round pull-right"><span data-round="${round.roundNumber}"><i data-feather="x"></i></span></div>
 													</a>
 												</li>`);
 				

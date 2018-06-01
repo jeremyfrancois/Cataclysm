@@ -174,7 +174,8 @@ class Tourney {
 		
 		let maxTable = playersToMatch.length / 2;
 		
-		this.sortPlayers(playersToMatch);
+		if(roundNumber > 1)
+			this.sortPlayers(playersToMatch);
 		
 		while(matchesArray.length < maxTable){
 			let playerToMatch = playersToMatch.shift();			

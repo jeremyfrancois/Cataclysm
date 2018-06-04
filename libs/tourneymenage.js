@@ -54,7 +54,9 @@ $(function(){
 		if(tournoi.players && tournoi.players.length > 0){
 			let content = '<tbody>';
 			let rank = 1;
-			tournoi.sortPlayers(tournoi.players);
+			if(tournoi.rounds.length > 1){
+				tournoi.sortPlayers(tournoi.players);
+			}
 			tournoi.players.forEach(function(player){
 				content += '<tr>';
 				
